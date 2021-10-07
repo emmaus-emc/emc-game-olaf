@@ -16,6 +16,8 @@ var spelStatus = SPELEN;
 
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
+var KEY_LEFT = 37;
+var KEY_RIGHT = 39;
 
 
 /* ********************************************* */
@@ -51,7 +53,8 @@ var verwerkBotsing = function () {
  */
 var tekenAlles = function () {
   // achtergrond
-
+background("purple"); 
+  fill("white");
   // vijand
 
   // kogel
@@ -59,9 +62,15 @@ var tekenAlles = function () {
   // speler
   fill("black");
   rect(spelerX - 25, spelerY - 25, 50, 50);
-  fill("black");
+  fill("white");
   ellipse(spelerX, spelerY, 10, 10);
 
+  if (keyIsDown(KEY_LEFT)) {
+    spelerX = spelerX - 1;
+  }
+  if (keyIsDown(KEY_RIGHT)) {
+    spelerX = spelerX + 1;
+    };
   // punten en health
 
 };
@@ -89,6 +98,7 @@ function setup() {
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
   background('purple');
+
 }
 
 /**
@@ -110,3 +120,4 @@ function draw() {
 
   }
 }
+  
