@@ -18,7 +18,8 @@ var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 var KEY_LEFT = 37;
 var KEY_RIGHT = 39;
-
+var KEY_UP = 38;
+var KEY_DOWN = 40;
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -70,6 +71,12 @@ background("purple");
   }
   if (keyIsDown(KEY_RIGHT)) {
     spelerX = spelerX + 1;
+    };
+    if (keyIsDown(KEY_DOWN)) {
+    spelerY = spelerY + 1;
+  }
+  if (keyIsDown(KEY_UP)) {
+    spelerY = spelerY - 1;
     };
   // punten en health
 
